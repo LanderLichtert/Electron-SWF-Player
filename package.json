@@ -1,0 +1,48 @@
+{
+  "name": "electron-swf-player",
+  "version": "1.0.0",
+  "description": "A flash player",
+  "main": "static/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "set DEBUG=electron-builder && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "productName": "SWF File player",
+    "appId": "",
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.test"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "AudioVideo"
+    },
+    "extraResources": [
+      "static/test.swf"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-builder": "^20.38.5"
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^2.1.0"
+  }
+}
