@@ -1,0 +1,27 @@
+{
+    // Enforcing
+    "strict": true,
+    "unused": true,
+    "undef": true,
+    "latedef": "nofunc",
+    "bitwise": true,
+    "curly": true,
+    "freeze": true,
+    "varstmt": true,
+
+    // Relaxing
+    "esversion": 6,
+    "eqnull": true,
+
+    // Environment
+    "module": true,
+    "browser": true,
+    "node": true,
+    "devel": true,
+
+    "globals": {
+        "angular": false,
+        "module": false,
+        "$": false
+    }
+}

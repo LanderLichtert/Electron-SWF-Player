@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>SWF Player</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="side"></div>
+      <webview class="center" src="./test.swf" plugins></webview>
+      <div class="side"></div>
+    </div>
+    <div class="footer"></div>
+    <script>
+      require('./renderer.js');
+    </script>
+  </body>
+</html>
