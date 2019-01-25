@@ -20,6 +20,9 @@
             "x64"
           ]
         }
+      ],
+      "extraResources": [
+        "static/plugins/pepflashplayer64_32_0_0_114.dll"
       ]
     },
     "mac": {
@@ -32,17 +35,18 @@
       "target": [
         "AppImage"
       ],
-      "category": "AudioVideo"
-    },
-    "extraResources": [
-      "static/test.swf"
-    ]
+      "category": "AudioVideo",
+      "extraResources": [
+        "static/plugins/libpepflashplayer.so"
+      ]
+    }
   },
   "devDependencies": {
     "electron": "^4.0.1",
     "electron-builder": "^20.38.5"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^2.1.0"
+    "custom-electron-titlebar": "^2.1.0",
+    "nw-flash-trust-a": "^0.4.6"
   }
 }

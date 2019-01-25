@@ -18,6 +18,10 @@
     height: 4px;
 }
 
+.hide {
+    display: none;
+}
+
 .window-title {
     margin-left: 5px !important;
 }
