@@ -4,40 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <title>SWF Player</title>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script type="text/javascript" src="./script.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="side"></div>
-      <div class="center" id="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      <webview class="hide" plugins></webview>
-      <!-- <webview class="center" src="file:///home/lander/Desktop/Electron-SWF-Player/dist/test.swf" plugins></webview> -->
-      <div class="side"></div>
+    <div class="center" id="drop" 
+        ondrop="drop(event)" 
+        ondragover="dragOver(event)" 
+        ondragleave="dragLeave(event)">
+      <img>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" version="1.1">
+          <line x1="10" y1="65" x2="10" y2="90" stroke-linecap="round" stroke-width="7" />
+          <line x1="10" y1="90" x2="90" y2="90" stroke-linecap="round" stroke-width="7" />
+          <line x1="90" y1="90" x2="90" y2="65" stroke-linecap="round" stroke-width="7" />
+          <line x1="50" y1="10" x2="50" y2="65" stroke-linecap="round" stroke-width="7" />
+          <line x1="50" y1="65" x2="33" y2="45" stroke-linecap="round" stroke-width="7" />
+          <line x1="50" y1="65" x2="67" y2="45" stroke-linecap="round" stroke-width="7" />
+        </svg>
+      </img>
+      <input id="upload" type="file"/>
+      <p><a onclick="$('#upload').click();">Choose a file</a> or drag it here.</p>
     </div>
-    <div class="footer"></div>
+    <webview class="center hide" id="flash" plugins></webview>
     <script>
       require('./renderer.js');
     </script>
-    <script>
-      function allowDrop(ev) {
-        ev.preventDefault();
-      }
-      
-      function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-      }
-      
-      function drop(ev) {
-        debugger;
-        ev.preventDefault();
-        let path = ev.dataTransfer.files[0].path;
-        let divv = document.getElementById("drop");
-        divv.classList.remove("center");
-        divv.classList.add("hide");
-        let webview = document.getElementsByTagName('webview')[0];
-        webview.classList.remove("hide");
-        webview.classList.add("center");
-        webview.src = path;
-      }
-      </script>
   </body>
 </html>

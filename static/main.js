@@ -6,7 +6,7 @@ let resourcePath = isDev() ? __dirname : process.resourcesPath + '/static';
 let pluginName;
 switch (process.platform) {
   case 'win32':
-    pluginName = 'pepflashplayer64_32_0_0_114.dll';
+    pluginName = 'pepflashplayer.dll';
     break;
   case 'darwin':
     pluginName = 'PepperFlashPlayer.plugin';
@@ -39,10 +39,12 @@ function createWindow () {
     frame: false,
     backgroundColor: '#1e1e1e',
     webPreferences: {
-      plugins: true
+      plugins: true,
+      nodeIntegration: true,
+      webviewTag: true
     }
   });
-
+  
   // mainWindow.webContents.openDevTools();
 
   mainWindow.once('ready-to-show', () => mainWindow.show());

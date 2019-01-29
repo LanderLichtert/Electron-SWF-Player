@@ -22,14 +22,17 @@
         }
       ],
       "extraResources": [
-        "static/plugins/pepflashplayer64_32_0_0_114.dll"
+        "static/plugins/pepflashplayer.dll"
       ]
     },
     "mac": {
       "target": [
         "dmg"
       ],
-      "category": "public.app-category.test"
+      "category": "public.app-category.test",
+      "extraResources": [
+        "static/plugins/PepperFlashPlayer.plugin"
+      ]
     },
     "linux": {
       "target": [
@@ -47,6 +50,7 @@
   },
   "dependencies": {
     "custom-electron-titlebar": "^2.1.0",
+    "jquery": "^3.3.1",
     "nw-flash-trust-a": "^0.4.6"
   }
 }
